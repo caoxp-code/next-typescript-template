@@ -36,8 +36,7 @@ const lessConfig = withLess({
     localIdentName: '[name]__[local]__[hash:base64:5]',
     getLocalIdent: (context, localIdentName, localName, options) => {
       let hz = context.resourcePath.replace(context.rootContext, '')
-      console.log('hz:', hz)
-      if (/node_modules/.test(hz)) {
+      if (/node_modules/.test(hz) || !/(\.module\.)/.test(hz)) {
         return localName
       } else {
         return cssGetLocalIndent(context, localIdentName, localName, options)
