@@ -2,6 +2,7 @@
 
 import React, { ReactNode } from 'react'
 import { AppProps } from 'next/app'
+import 'antd/dist/antd.less'
 
 const MyApp: ReactNode = ({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} />
